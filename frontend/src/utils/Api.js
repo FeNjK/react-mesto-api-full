@@ -149,11 +149,10 @@ class Api {
 }
 
 const api = new Api({
-  // url: "https://api.show-me.nomorepartiesxyz.ru",
-  url: "http://localhost:4000",
+  url: "https://api.show-me.nomorepartiesxyz.ru",
+  // url: "http://localhost:4000",
   headers: {
     "Content-type": "application/json",
-    // authorization: "10bf8282-16d5-46f1-976c-28311168fc94",
   },
 });
 
