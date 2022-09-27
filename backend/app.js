@@ -5,6 +5,7 @@ const { celebrate, Joi, errors } = require('celebrate');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
+const cors = require('./middlewares/cors');
 const routerUser = require('./routes/users');
 const routerCard = require('./routes/cards');
 const { login, createUser } = require('./controllers/users');
@@ -14,7 +15,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { NotFoundError } = require('./errors/http-status-codes');
 const { validURL } = require('./utils/regularExpressions');
 
-const { PORT = 3000 } = process.env;
+const { PORT = 4000 } = process.env;
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.get('/crash-test', () => { // краш-тест сервера
     throw new Error('Сервер сейчас упадёт');
   }, 0);
 });
+app.use(cors);
 app.post(
   '/signin',
   celebrate({

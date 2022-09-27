@@ -14,10 +14,13 @@ class Api {
   }
 
   getUserInfo() {
-    return fetch(`${this._url}/users/me`, {
-      method: "GET",
-      headers: this._headers,
-    })
+    return fetch(
+      `${this._url}/users/me`,
+      {
+        method: "GET",
+        headers: this._headers,
+        credentials: "include",
+      })
       .then((res) => this._ringingServer(res))
       .then((result) => {
         return result;
@@ -25,14 +28,17 @@ class Api {
   }
 
   setUserInfo({ name, about }) {
-    return fetch(`${this._url}/users/me`, {
-      method: "PATCH",
-      headers: this._headers,
-      body: JSON.stringify({
-        name,
-        about,
-      }),
-    })
+    return fetch(
+      `${this._url}/users/me`,
+      {
+        method: "PATCH",
+        headers: this._headers,
+        body: JSON.stringify({
+          name,
+          about,
+        }),
+        credentials: "include",
+      })
       .then((res) => this._ringingServer(res))
       .then((result) => {
         return result;
@@ -40,13 +46,16 @@ class Api {
   }
 
   setUserAvatar(link) {
-    return fetch(`${this._url}/users/me/avatar`, {
-      method: "PATCH",
-      headers: this._headers,
-      body: JSON.stringify({
-        avatar: link.avatar,
-      }),
-    })
+    return fetch(
+      `${this._url}/users/me/avatar`,
+      {
+        method: "PATCH",
+        headers: this._headers,
+        body: JSON.stringify({
+          avatar: link.avatar,
+        }),
+        credentials: "include",
+      })
       .then((res) => this._ringingServer(res))
       .then((result) => {
         return result;
@@ -54,10 +63,13 @@ class Api {
   }
 
   getInitialCards() {
-    return fetch(`${this._url}/cards`, {
-      method: "GET",
-      headers: this._headers,
-    })
+    return fetch(
+      `${this._url}/cards`,
+      {
+        method: "GET",
+        headers: this._headers,
+        credentials: "include",
+      })
       .then((res) => this._ringingServer(res))
       .then((result) => {
         return result;
@@ -65,14 +77,17 @@ class Api {
   }
 
   addNewCard(data) {
-    return fetch(`${this._url}/cards`, {
-      method: "POST",
-      headers: this._headers,
-      body: JSON.stringify({
-        name: data.name,
-        link: data.link,
-      }),
-    })
+    return fetch(
+      `${this._url}/cards`,
+      {
+        method: "POST",
+        headers: this._headers,
+        body: JSON.stringify({
+          name: data.name,
+          link: data.link,
+        }),
+        credentials: "include",
+      })
       .then((res) => this._ringingServer(res))
       .then((result) => {
         return result;
@@ -80,10 +95,14 @@ class Api {
   }
 
   removeCard(cardId) {
-    return fetch(`${this._url}/cards/${cardId}`, {
-      method: "DELETE",
-      headers: this._headers,
-    })
+    return fetch(
+      `${this._url}/cards/${cardId}`,
+      {
+        method: "DELETE",
+        headers: this._headers,
+        credentials: "include",
+      },
+    )
       .then((res) => this._ringingServer(res))
       .then((result) => {
         return result;
@@ -91,10 +110,13 @@ class Api {
   }
 
   setLikeCard(cardId) {
-    return fetch(`${this._url}/cards/${cardId}/likes`, {
-      method: "PUT",
-      headers: this._headers,
-    })
+    return fetch(
+      `${this._url}/cards/${cardId}/likes`,
+      {
+        method: "PUT",
+        headers: this._headers,
+        credentials: "include",
+      })
       .then((res) => this._ringingServer(res))
       .then((result) => {
         return result;
@@ -102,10 +124,13 @@ class Api {
   }
 
   deleteLikeCard(cardId) {
-    return fetch(`${this._url}/cards/${cardId}/likes`, {
-      method: "DELETE",
-      headers: this._headers,
-    })
+    return fetch(
+      `${this._url}/cards/${cardId}/likes`,
+      {
+        method: "DELETE",
+        headers: this._headers,
+        credentials: "include",
+      })
       .then((res) => this._ringingServer(res))
       .then((result) => {
         return result;
@@ -124,10 +149,11 @@ class Api {
 }
 
 const api = new Api({
-  url: "https://mesto.nomoreparties.co/v1/cohort-43",
+  // url: "https://api.show-me.nomorepartiesxyz.ru",
+  url: "http://localhost:4000",
   headers: {
     "Content-type": "application/json",
-    authorization: "10bf8282-16d5-46f1-976c-28311168fc94",
+    // authorization: "10bf8282-16d5-46f1-976c-28311168fc94",
   },
 });
 

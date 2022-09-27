@@ -195,12 +195,14 @@ const login = async (req, res, next) => {
     // сохраняем токен в куки
     // делаем защиту от автоматической отправки кук (CSRF)
     res.cookie('jwt', token, {
-      maxAge: 3600000, // продолжительность жизни куки в миллисекундах
+      maxAge: 3600000 * 24 * 7, // продолжительность жизни куки
       httpOnly: true, // из JS до этих кук мы не дотянемся
-      sameSite: true, // данная кука может работать только с текущим доменом
+      sameSite: 'None',
+      secure: 'None',
     });
     res.send(user.toJSON());
-    /* res.send({ token }); */
+    console.log(user.toJSON());
+    // res.send({ token });
   } catch (err) {
     next(err);
   }

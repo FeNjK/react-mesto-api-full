@@ -24,18 +24,18 @@ class ApiAuth {
     return fetch(`${this._url}/signup`, {
       method: "POST",
       headers: this._headers,
-      body: JSON.stringify({ email, password })
-    })
-    .then((res) => this._ringingServer(res))
+      body: JSON.stringify({ email, password }),
+      credentials: "include",
+    }).then((res) => this._ringingServer(res));
   }
 
   autorise({ email, password }) {
     return fetch(`${this._url}/signin`, {
       method: "POST",
       headers: this._headers,
-      body: JSON.stringify({ email, password })
-    })
-    .then((res) => this._ringingServer(res))
+      body: JSON.stringify({ email, password }),
+      credentials: "include",
+    }).then((res) => this._ringingServer(res));
   }
 
   getEmail(token) {
@@ -45,13 +45,14 @@ class ApiAuth {
         ...this._headers,
         authorization: `Bearer ${token}`,
       },
-    })
-    .then((res) => this._ringingServer(res))
+      credentials: "include",
+    }).then((res) => this._ringingServer(res));
   }
 }
 
 const apiAuth = new ApiAuth({
-  url: "https://auth.nomoreparties.co",
+  // url: "https://api.show-me.nomorepartiesxyz.ru",
+  url: "http://localhost:4000",
 });
 
 export default apiAuth;

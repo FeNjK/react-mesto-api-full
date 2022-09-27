@@ -41,7 +41,7 @@ function App() {
     apiAuth
       .getEmail(jwt)
       .then((data) => {
-        setAuthorizationEmail(data.data.email);
+        setAuthorizationEmail(data.email);
         localStorage.setItem("jwt", data.token);
         setIsLoggedIn(true);
         history.push("/");
@@ -53,6 +53,7 @@ function App() {
 
   useEffect(() => {
     handleTokenCheck();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -66,7 +67,7 @@ function App() {
       .autorise(data)
       .then((res) => {
         setIsLoggedIn(true);
-        console.log(res.token);
+        /* console.log(res.token); */
         setAuthorizationEmail(data.email);
         localStorage.setItem("jwt", res.token);
         history.push("/");
@@ -130,14 +131,16 @@ function App() {
   // Функции взаимодействия с карточками
   function handleCardLike(card) {
     // Проверяем, есть ли уже лайк на этой карточке
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some((i) => i === currentUser._id);
 
     // Отправляем запрос в API и получаем обновлённые данные карточки
     api
       .toggleLikeCard(card._id, isLiked)
       .then((newCard) => {
         setCards((state) =>
-          state.map((c) => (c._id === card._id ? newCard : c))
+          state.map((currentCard) =>
+            currentCard._id === card._id ? newCard : currentCard
+          )
         );
       })
       .catch((err) => {

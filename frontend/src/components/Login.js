@@ -29,7 +29,7 @@ function Login({ onLogin }) {
         className="login__form"
         onSubmit={handleSubmit}
         /* noValidate */ 
-        autoComplete="off"
+        /* autoComplete="off" */
       >
         <input
           type="email"
@@ -59,6 +59,7 @@ function Login({ onLogin }) {
           required
           value={loginData.password || ""}
           onChange={handleChange}
+          autoComplete="off"
         />
         {/* Заготовка под валидацию формы по аналогии с попапами*/}
         {/* <span
