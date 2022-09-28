@@ -1,9 +1,9 @@
 const cors = (req, res, next) => {
   const allowedCors = [
     'https://show-me.nomorepartiesxyz.ru',
-    'https://api.show-me.nomorepartiesxyz.ru',
+    'http://show-me.nomorepartiesxyz.ru',
     'http://localhost:3000',
-    'http://localhost:4000',
+    'https://localhost:3000',
   ];
 
   const { origin } = req.headers; // Сохраняем источник запроса в переменную origin
