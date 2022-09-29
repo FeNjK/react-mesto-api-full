@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.0.65
+IP 51.250.0.65
 
 Frontend https://show-me.nomoredomains.sbs
 
