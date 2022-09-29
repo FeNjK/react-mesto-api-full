@@ -20,6 +20,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({ name: "", about: "" });
   const [authorizationEmail, setAuthorizationEmail] = useState("");
   const [registration, setRegistration] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
@@ -27,7 +28,6 @@ function App() {
   const [cards, setCards] = useState([]);
   const [isConfirmPopupOpen, setIsConfirmPopupOpen] = useState(false);
   const [removeCard, setRemoveCard] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [infoToolTipMessage, setInfoToolTipMessage] = useState(false);
 
   const history = useHistory();
