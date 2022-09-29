@@ -1,7 +1,7 @@
 const cors = (req, res, next) => {
   const allowedCors = [
-    'https://show-me.nomorepartiesxyz.ru',
-    'http://show-me.nomorepartiesxyz.ru',
+    'https://show-me.nomoredomains.sbs',
+    'http://show-me.nomoredomains.sbs',
     'http://localhost:3000',
     'https://localhost:3000',
   ];
