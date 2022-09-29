@@ -30,7 +30,7 @@ function Register({ onRegister }) {
         className="register__form"
         onSubmit={handleSubmit}
         /* noValidate */ 
-        autoComplete="off"
+        // autoComplete="off"
       >
         <input
           type="email"
@@ -60,6 +60,7 @@ function Register({ onRegister }) {
           required
           value={registerData.password}
           onChange={handleChange}
+          autoComplete="off"
         />
         {/* Заготовка под валидацию формы по аналогии с попапами*/}
         {/* <span
