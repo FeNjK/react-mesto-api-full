@@ -149,8 +149,8 @@ class Api {
 }
 
 const api = new Api({
-  // url: "https://api.show-me.nomorepartiesxyz.ru",
-  url: "http://localhost:3000",
+  url: "https://api.show-me.nomorepartiesxyz.ru",
+  // url: "http://localhost:3000",
   headers: {
     "Content-type": "application/json",
   },
