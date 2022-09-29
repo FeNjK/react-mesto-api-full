@@ -9,6 +9,8 @@
 
 ## Ссылки на проект
 
+Подключение к ВМ осуществляется по ссылке fenjk@51.250.0.65
+
 IP 51.250.0.65
 
 Frontend https://show-me.nomoredomains.sbs
