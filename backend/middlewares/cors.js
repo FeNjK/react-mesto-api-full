@@ -2,8 +2,6 @@
 const allowedCors = [
   'https://show-me.nomoredomains.sbs',
   'http://show-me.nomoredomains.sbs',
-  'https://api.show-me.nomorepartiesxyz.ru',
-  'http://api.show-me.nomorepartiesxyz.ru',
   'localhost:3000',
   'http://localhost:3000',
 ];
