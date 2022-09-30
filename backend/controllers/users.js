@@ -198,7 +198,7 @@ const login = async (req, res, next) => {
       maxAge: 3600000 * 24 * 7, // продолжительность жизни куки
       httpOnly: true, // из JS до этих кук мы не дотянемся
       sameSite: 'None',
-      secure: 'None',
+      secure: true,
     });
     res.send(user.toJSON());
     console.log(user.toJSON());
