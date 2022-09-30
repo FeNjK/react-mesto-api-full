@@ -1,15 +1,15 @@
-const cors = (req, res, next) => {
-  const allowedCors = [
-    'https://show-me.nomoredomains.sbs',
-    'http://show-me.nomoredomains.sbs',
-    'http://localhost:3000',
-    'https://localhost:3000',
-  ];
+// Массив доменов, с которых разрешены кросс-доменные запросы
+const allowedCors = [
+  'https://show-me.nomoredomains.sbs',
+  'http://show-me.nomoredomains.sbs',
+  'localhost:3000',
+];
 
+const cors = (req, res, next) => {
   const { origin } = req.headers; // Сохраняем источник запроса в переменную origin
   const { method } = req; // Сохраняем тип запроса (HTTP-метод) в соответствующую переменную
   // Значение для заголовка Access-Control-Allow-Methods по умолчанию (разрешены все типы запросов)
-  const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
+  const DEFAULT_ALLOWED_METHODS = 'GET, HEAD, PUT, PATCH, POST, DELETE';
   // сохраняем список заголовков исходного запроса
   const requestHeaders = req.headers['access-control-request-headers'];
   if (method === 'OPTIONS') {
