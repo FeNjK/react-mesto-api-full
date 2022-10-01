@@ -16,7 +16,7 @@ const cardSchema = new Schema(
       required: true,
       validator(v) {
         // eslint-disable-next-line no-useless-escape
-        return /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w\.-]*)*\/?$/mi.isURL(v);
+        return /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gmi.isURL(v);
       },
     },
     owner: {
