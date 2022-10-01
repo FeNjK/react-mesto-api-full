@@ -1,7 +1,7 @@
 // Массив доменов, с которых разрешены кросс-доменные запросы
 const allowedCors = [
-  'https://show-me.nomoredomains.sbs',
-  'http://show-me.nomoredomains.sbs',
+  'https://show-me.nomoredomains.club',
+  'http://show-me.nomoredomains.club',
   'localhost:3000',
   'http://localhost:3000',
 ];

@@ -51,7 +51,7 @@ class ApiAuth {
 }
 
 const apiAuth = new ApiAuth({
-  url: "https://api.show-me.nomorepartiesxyz.ru",
+  url: "https://api.show-me.nomoredomains.club",
   // url: "http://localhost:3000",
 });
 
