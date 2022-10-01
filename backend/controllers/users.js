@@ -202,8 +202,8 @@ const login = async (req, res, next) => {
       /* sameSite: 'Lax', */
     });
     res.send(user.toJSON());
-    console.log(user.toJSON());
-    // res.send({ token });
+    /* console.log(user.toJSON()); */
+    /* res.send({ token }); */
   } catch (err) {
     next(err);
   }
