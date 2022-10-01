@@ -26,7 +26,7 @@ const userSchema = new Schema(
         /* или просто validator: (v) => isURL(v), */
         /* return validator.isURL(v); */
         // eslint-disable-next-line no-useless-escape
-        return /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gmi.isURL(v);
+        return /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/mi.isURL(v);
       },
     },
     email: {
