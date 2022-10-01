@@ -197,8 +197,7 @@ const login = async (req, res, next) => {
     res.cookie('jwt', token, {
       maxAge: 3600000 * 24 * 7, // продолжительность жизни куки
       httpOnly: true, // из JS до этих кук мы не дотянемся
-      sameSite: 'None',
-      secure: true,
+      sameSite: true,
       /* sameSite: 'Lax', */
     });
     res.send(user.toJSON());
