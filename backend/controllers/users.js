@@ -89,7 +89,7 @@ const createUser = async (req, res, next) => {
       ));
       return;
     }
-    if (err.name === 'MongoServerError') {
+    if (err.code === 11000) {
       next(new ConflictError(
         'Пользователь с таким email уже существует.',
       ));
