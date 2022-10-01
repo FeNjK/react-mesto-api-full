@@ -13,6 +13,6 @@
 
 IP 51.250.0.65
 
-Frontend https://show-me.nomoredomains.sbs
+Frontend https://show-me.nomoredomains.club
 
-Backend https://api.show-me.nomorepartiesxyz.ru
+Backend https://api.show-me.nomoredomains.club
